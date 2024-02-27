@@ -16,7 +16,7 @@
   <body class="poppins">
     <header class="min-h-screen bg-[#0D6EFD0D] w-full pt-12 relative">
       <div class="w-11/12 mx-auto max-w-[1500px]">
-        <div class="flex justify-between items-center pb-12">
+        <div class="flex justify-between items-center md:pb-12">
           <div class="text-neutral-700 text-[25px] font-bold leading-[30px]">
             Snowy Gadgets
           </div>
@@ -26,7 +26,9 @@
             Sign Up
           </button>
         </div>
-        <div>
+        <div
+          class="h-[85vh] flex flex-col justify-center items-center md:h-auto md:flex-auto"
+        >
           <h1 class="text-center text-stone-950 text-[65px] font-bold">
             Apple Iphone 13 Pro Max
           </h1>
@@ -44,7 +46,7 @@
           </button>
         </div>
         <div
-          class="flex items-end md:gap-0 lg:gap-14 justify-center absolute -bottom-1/3 left-1/2 -translate-x-1/2"
+          class="hidden md:flex items-end md:gap-0 lg:gap-14 justify-center absolute -bottom-1/3 left-1/2 -translate-x-1/2"
         >
           <img
             class="lg:w-[218px] h-[438px]"
@@ -64,8 +66,62 @@
         </div>
       </div>
     </header>
-    <main></main>
-    <footer></footer>
+    <main class="w-11/12 mx-auto md:pt-60">
+      <h1
+        class="text-center text-stone-950 text-[35px] font-semibold pb-7 pt-12"
+      >
+        Search your phone
+      </h1>
+      <!-- Search section -->
+      <div
+        class="flex flex-row items-center justify-center w-full sm:w-11/12 md:w-3/4 lg:w-2/3 mx-auto relative mb-12"
+      >
+        <img src="./images/search.svg" alt="" class="absolute left-5" />
+        <input
+          type="text"
+          placeholder="Search your phone"
+          class="py-3 rounded-lg input-bordered w-full bg-[#100F0F0D] outline-none pl-14 pr-32"
+        />
+        <button
+          class="py-[10px] duration-200 active:scale-90 rounded-lg btn-primary px-6 bg-blue-600 text-white text-lg font-bold absolute right-0"
+        >
+          Search
+        </button>
+      </div>
+
+      <!-- Product section -->
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div
+          class="w-full max-w-[364px] bg-white rounded-lg border border-stone-300 text-center p-6 mx-auto"
+        >
+          <div class="h-[300px] bg-blue-600 bg-opacity-5 rounded-lg p-5 mb-6">
+            <img class="w-full" src="./images/pngwing 3.png" alt="" />
+          </div>
+          <div class="space-y-2">
+            <h2 class="text-center text-neutral-700 text-[25px] font-bold">
+              Iphone 13 Pro Max
+            </h2>
+            <p
+              class="w-[291px] text-center text-neutral-500 text-lg font-normal leading-[30px]"
+            >
+              There are many variations of passages of available, but the
+              majority have suffered
+            </p>
+            <h2 class="text-center text-neutral-700 text-[25px] font-bold">
+              $999
+            </h2>
+            <button
+              id="showDetails"
+              class="btn btn-primary px-6 bg-blue-600 text-white text-xl font-bold"
+            >
+              Show Details
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="py-60"></footer>
     <!-- script link  -->
     <script src="./js/app.js"></script>
   </body>
