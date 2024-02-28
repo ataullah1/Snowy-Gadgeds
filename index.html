@@ -30,7 +30,7 @@
         <div
           class="h-[85vh] flex flex-col justify-center items-center md:h-auto md:flex-auto"
         >
-          <h1 class="text-center text-stone-950 text-[65px] font-bold">
+          <h1 class="text-center text-stone-950 text-5xl md:text-[65px] font-bold">
             Apple Iphone 13 Pro Max
           </h1>
           <p
@@ -92,8 +92,11 @@
 
       <!-- Product section -->
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div
+      <div
+        id="productSec"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+      >
+        <!-- <div
           class="w-full max-w-[364px] bg-white rounded-lg border border-stone-300 text-center p-6 mx-auto"
         >
           <div class="h-[300px] bg-blue-600 bg-opacity-5 rounded-lg p-5 mb-6">
@@ -119,7 +122,7 @@
               Show Details
             </button>
           </div>
-        </div>
+        </div> -->
       </div>
       <button
         id="showAll"
@@ -131,14 +134,18 @@
     <footer class="pt-24 bg-[#0D6EFD0D]">
       <div class="w-11/12 mx-auto">
         <!-- hed Footer  -->
-        <div class="flex justify-between items-center">
+        <div
+          class="flex flex-col md:flex-row text-center md:text-left justify-between items-center"
+        >
           <div>
             <h1 class="text-stone-950 text-[45px] font-bold">Snowy Gadgets</h1>
             <p class="text-neutral-500 text-lg font-semibold leading-loose">
               You can definitely work.
             </p>
           </div>
-          <div class="flex flex-row items-center justify-center">
+          <div
+            class="flex flex-col-reverse md:flex-row gap-8 md:gap-0 items-center justify-center mt-8 md:mt-0"
+          >
             <img src="./images/Social.svg" alt="" class="pr-7 cursor-pointer" />
             <button
               class="btn btn-primary bg-blue-600 text-white text-xl font-bold block mx-auto"
