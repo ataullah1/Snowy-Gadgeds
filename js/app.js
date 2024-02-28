@@ -1,3 +1,9 @@
+window.addEventListener('load', () => {
+  const bodySec = document.getElementById('bodySec');
+  bodySec.classList.remove('hidden');
+  loadingSec.classList.add('hidden');
+});
+
 const apiConnect = async (search) => {
   const url = await fetch(
     `https://openapi.programming-hero.com/api/phones?search=${search}`
