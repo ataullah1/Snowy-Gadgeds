@@ -4,15 +4,20 @@ window.addEventListener('load', () => {
   loadingSec.classList.add('hidden');
 });
 
-const apiConnect = async (search, isTrue) => {
+const apiConnect = async (search = 'a', isTrue) => {
   const url = await fetch(
     `https://openapi.programming-hero.com/api/phones?search=${search}`
   );
   const data = await url.json();
   const phones = data.data;
   phoneFunc(phones, isTrue);
+  // call(isTrue);
   //   console.log(phones);
 };
+// const call = (isTrue) => {};
+// if (!isTrue) {
+apiConnect();
+// }
 const phoneFunc = (phone, isTrue) => {
   // Search result show all button
   const showAll = document.getElementById('showAll');
@@ -23,7 +28,7 @@ const phoneFunc = (phone, isTrue) => {
     showAll.classList.add('hidden');
   }
   // Search result show only 9 phones
-  console.log('is Show all', isTrue);
+  // console.log('is Show all', isTrue);
   if (!isTrue) {
     phone = phone.slice(0, 9);
   }
@@ -32,7 +37,7 @@ const phoneFunc = (phone, isTrue) => {
   productSec.innerHTML = '';
   // Phones looping
   phone.forEach((phn) => {
-    console.log(phn);
+    // console.log(phn);
     const createDiv = document.createElement('div');
     createDiv.classList =
       'w-full max-w-[364px] bg-white rounded-lg border border-stone-300 text-center p-6 mx-auto';
@@ -66,6 +71,8 @@ const phoneFunc = (phone, isTrue) => {
   });
   loadingDots(true);
 };
+
+// search button=============
 const btnSearch = (isTrue) => {
   loadingDots(false);
   const inputSearch = document.getElementById('inputSearch');
@@ -237,5 +244,5 @@ const phnDetails = (dta) => {
  </dialog>`;
 
   openModal.showModal();
-  console.log(dta);
+  // console.log(dta);
 };
