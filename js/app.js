@@ -94,7 +94,6 @@ const showDetailsFunc = async (id) => {
     `https://openapi.programming-hero.com/api/phone/${id}`
   );
   const data = await res.json();
-  console.log(data);
   const dta = data.data;
   phnDetails(dta);
 };
@@ -107,10 +106,10 @@ const phnDetails = (dta) => {
    >
      <div class="p-10 bg-white rounded-lg space-y-1 sm:space-y-4">
        <div
-         class="h-72 sm:h-[483px] bg-blue-600 bg-opacity-5 rounded-lg"
+         class="h-72 sm:h-[483px] bg-blue-600 bg-opacity-5 rounded-lg p-6"
        >
          <img
-           src="./images/pngwing 3.png"
+           src=${dta.image}
            alt=""
            class="sm:h-full mx-auto"
          />
@@ -118,7 +117,7 @@ const phnDetails = (dta) => {
        <div
          class="text-neutral-700 text-2xl sm:text-3xl font-bold pt-5"
        >
-         Iphone 13 Pro Max
+         ${dta.name}
        </div>
        <div
          class="w-full lg:w-[671px] text-neutral-500 text-base font-normal leading-relaxed"
@@ -129,7 +128,7 @@ const phnDetails = (dta) => {
        <div class="text-base sm:text-xl">
          <span class="text-neutral-700 font-semibold">Storage : </span
          ><span class="text-neutral-500 font-normal"
-           >128GB/256GB/1TB Storage, No card slot</span
+           >${dta.mainFeatures.storage}</span
          >
        </div>
        <div class="text-base sm:text-xl">
@@ -137,28 +136,28 @@ const phnDetails = (dta) => {
            >Display Size :</span
          ><span class="text-neutral-500 font-semibold"> </span
          ><span class="text-neutral-500 font-normal"
-           >6.7 Inches, 109.8 cm</span
+           >${dta.mainFeatures.displaySize}</span
          >
        </div>
        <div class="text-base sm:text-xl">
          <span class="text-neutral-700 font-semibold">Chipset :</span
          ><span class="text-neutral-500 font-semibold"> </span
          ><span class="text-neutral-500 font-normal"
-           >Apple A15 Bionic</span
+           >${dta.mainFeatures.chipSet}</span
          >
        </div>
        <div class="text-base sm:text-xl">
          <span class="text-neutral-700 font-semibold">Memory :</span
          ><span class="text-neutral-500 font-semibold"> </span
          ><span class="text-neutral-500 font-normal"
-           >128GB 6 GB RAM, 256GB RAM, 512GB RAM1 1TB 6GB RAM</span
+           >${dta.mainFeatures.memory}</span
          >
        </div>
        <div class="text-base sm:text-xl">
          <span class="text-neutral-700 font-semibold">Slug :</span
          ><span class="text-neutral-500 font-semibold"> </span
          ><span class="text-neutral-500 font-normal"
-           >Applice_Iphone_13_Pro_Max</span
+           >${dta.slug}</span
          >
        </div>
        <div class="text-base sm:text-xl">
@@ -166,19 +165,61 @@ const phnDetails = (dta) => {
            >Release data :</span
          ><span class="text-neutral-500 font-semibold"> </span
          ><span class="text-neutral-500 font-normal"
-           >Released 2021, September 24</span
+           >${dta.releaseDate}</span
          >
        </div>
        <div class="text-base sm:text-xl">
          <span class="text-neutral-700 font-semibold">Brand :</span
          ><span class="text-neutral-500 font-semibold"> </span
-         ><span class="text-neutral-500 font-normal">Apple</span>
+         ><span class="text-neutral-500 font-normal">${dta.brand}</span>
        </div>
        <div class="text-base sm:text-xl">
          <span class="text-neutral-700 font-semibold">GPS :</span
          ><span class="text-neutral-500 font-semibold"> </span
          ><span class="text-neutral-500 font-normal"
-           >AYes, with A-GPS, GLONASS, GALILEO, BDS, QZSS</span
+           >${dta.others.GPS}</span
+         >
+       </div>
+       <div class="text-base sm:text-xl">
+         <span class="text-neutral-700 font-semibold">Bluetooth :</span
+         ><span class="text-neutral-500 font-semibold"> </span
+         ><span class="text-neutral-500 font-normal"
+           >${dta.others.Bluetooth}</span
+         >
+       </div>
+       <div class="text-base sm:text-xl">
+         <span class="text-neutral-700 font-semibold">NFC :</span
+         ><span class="text-neutral-500 font-semibold"> </span
+         ><span class="text-neutral-500 font-normal"
+           >${dta.others.NFC}</span
+         >
+       </div>
+       <div class="text-base sm:text-xl">
+         <span class="text-neutral-700 font-semibold">Radio :</span
+         ><span class="text-neutral-500 font-semibold"> </span
+         ><span class="text-neutral-500 font-normal"
+           >${dta.others.Radio}</span
+         >
+       </div>
+       <div class="text-base sm:text-xl">
+         <span class="text-neutral-700 font-semibold">USB :</span
+         ><span class="text-neutral-500 font-semibold"> </span
+         ><span class="text-neutral-500 font-normal"
+           >${dta.others.USB}</span
+         >
+       </div>
+       <div class="text-base sm:text-xl">
+         <span class="text-neutral-700 font-semibold">WLAN :</span
+         ><span class="text-neutral-500 font-semibold"> </span
+         ><span class="text-neutral-500 font-normal"
+           >${dta.others.WLAN}</span
+         >
+       </div>
+       <div class="text-base sm:text-xl">
+         <span class="text-neutral-700 font-semibold">Sensors:</span
+         ><span class="text-neutral-500 font-semibold"> </span
+         ><span class="text-neutral-500 font-normal"
+           >${dta.mainFeatures.sensors}</span
          >
        </div>
        <div class="modal-action pt-9">
@@ -196,4 +237,5 @@ const phnDetails = (dta) => {
  </dialog>`;
 
   openModal.showModal();
+  console.log(dta);
 };
