@@ -95,4 +95,105 @@ const showDetailsFunc = async (id) => {
   );
   const data = await res.json();
   console.log(data);
+  const dta = data.data;
+  phnDetails(dta);
+};
+const phnDetails = (dta) => {
+  document.getElementById(
+    'modalBox'
+  ).innerHTML = ` <dialog id="openModal" class="modal modal-bottom sm:modal-middle">
+   <div
+     class="max-h-screen overflow-scroll w-11/12 lg:w-[752px] mx-auto"
+   >
+     <div class="p-10 bg-white rounded-lg space-y-1 sm:space-y-4">
+       <div
+         class="h-72 sm:h-[483px] bg-blue-600 bg-opacity-5 rounded-lg"
+       >
+         <img
+           src="./images/pngwing 3.png"
+           alt=""
+           class="sm:h-full mx-auto"
+         />
+       </div>
+       <div
+         class="text-neutral-700 text-2xl sm:text-3xl font-bold pt-5"
+       >
+         Iphone 13 Pro Max
+       </div>
+       <div
+         class="w-full lg:w-[671px] text-neutral-500 text-base font-normal leading-relaxed"
+       >
+         It is a long established fact that a reader will be distracted
+         by the readable content of a page when looking at its layout.
+       </div>
+       <div class="text-base sm:text-xl">
+         <span class="text-neutral-700 font-semibold">Storage : </span
+         ><span class="text-neutral-500 font-normal"
+           >128GB/256GB/1TB Storage, No card slot</span
+         >
+       </div>
+       <div class="text-base sm:text-xl">
+         <span class="text-neutral-700 font-semibold"
+           >Display Size :</span
+         ><span class="text-neutral-500 font-semibold"> </span
+         ><span class="text-neutral-500 font-normal"
+           >6.7 Inches, 109.8 cm</span
+         >
+       </div>
+       <div class="text-base sm:text-xl">
+         <span class="text-neutral-700 font-semibold">Chipset :</span
+         ><span class="text-neutral-500 font-semibold"> </span
+         ><span class="text-neutral-500 font-normal"
+           >Apple A15 Bionic</span
+         >
+       </div>
+       <div class="text-base sm:text-xl">
+         <span class="text-neutral-700 font-semibold">Memory :</span
+         ><span class="text-neutral-500 font-semibold"> </span
+         ><span class="text-neutral-500 font-normal"
+           >128GB 6 GB RAM, 256GB RAM, 512GB RAM1 1TB 6GB RAM</span
+         >
+       </div>
+       <div class="text-base sm:text-xl">
+         <span class="text-neutral-700 font-semibold">Slug :</span
+         ><span class="text-neutral-500 font-semibold"> </span
+         ><span class="text-neutral-500 font-normal"
+           >Applice_Iphone_13_Pro_Max</span
+         >
+       </div>
+       <div class="text-base sm:text-xl">
+         <span class="text-neutral-700 font-semibold"
+           >Release data :</span
+         ><span class="text-neutral-500 font-semibold"> </span
+         ><span class="text-neutral-500 font-normal"
+           >Released 2021, September 24</span
+         >
+       </div>
+       <div class="text-base sm:text-xl">
+         <span class="text-neutral-700 font-semibold">Brand :</span
+         ><span class="text-neutral-500 font-semibold"> </span
+         ><span class="text-neutral-500 font-normal">Apple</span>
+       </div>
+       <div class="text-base sm:text-xl">
+         <span class="text-neutral-700 font-semibold">GPS :</span
+         ><span class="text-neutral-500 font-semibold"> </span
+         ><span class="text-neutral-500 font-normal"
+           >AYes, with A-GPS, GLONASS, GALILEO, BDS, QZSS</span
+         >
+       </div>
+       <div class="modal-action pt-9">
+         <form method="dialog">
+           <!-- if there is a button in form, it will close the modal -->
+           <button
+             class="btn bg-red-500 hover:bg-red-800 text-center text-white text-lg font-bold"
+           >
+             Close
+           </button>
+         </form>
+       </div>
+     </div>
+   </div>
+ </dialog>`;
+
+  openModal.showModal();
 };
