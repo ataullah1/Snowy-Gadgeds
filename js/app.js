@@ -1,6 +1,6 @@
-const apiConnect = async () => {
+const apiConnect = async (search) => {
   const url = await fetch(
-    'https://openapi.programming-hero.com/api/phones?search=iphone'
+    `https://openapi.programming-hero.com/api/phones?search=${search}`
   );
   const data = await url.json();
   const phones = data.data;
@@ -9,6 +9,8 @@ const apiConnect = async () => {
 };
 const phoneFunc = (phone) => {
   const productSec = document.getElementById('productSec');
+  //   clear phone container another search
+  productSec.innerHTML = '';
   phone.forEach((phn) => {
     console.log(phn);
     const createDiv = document.createElement('div');
@@ -42,4 +44,8 @@ const phoneFunc = (phone) => {
     productSec.appendChild(createDiv);
   });
 };
-apiConnect();
+document.getElementById('btnSrc').addEventListener('click', () => {
+  const inputSearch = document.getElementById('inputSearch');
+  const inpValue = inputSearch.value;
+  apiConnect(inpValue);
+});
