@@ -11,6 +11,7 @@ const phoneFunc = (phone) => {
   const productSec = document.getElementById('productSec');
   //   clear phone container another search
   productSec.innerHTML = '';
+  // Phones looping
   phone.forEach((phn) => {
     console.log(phn);
     const createDiv = document.createElement('div');
