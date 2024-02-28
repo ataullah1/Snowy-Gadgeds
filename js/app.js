@@ -53,7 +53,8 @@ const phoneFunc = (phone, isTrue) => {
     <h2 class="text-center text-neutral-700 text-[25px] font-bold">
       $999
     </h2>
-    <button
+    <button 
+      onclick="showDetailsFunc('${phn.slug}')"
       id="showDetails"
       class="btn btn-primary px-6 bg-blue-600 text-white text-xl font-bold"
     >
@@ -84,3 +85,14 @@ const loadingDots = (isTrue) => {
 document.getElementById('showAll').addEventListener('click', () => {
   btnSearch(true);
 });
+
+// Show details function
+// const showDetails = document.getElementById('showDetails');
+const showDetailsFunc = async (id) => {
+  console.log('bal', id);
+  const res = await fetch(
+    `https://openapi.programming-hero.com/api/phone/${id}`
+  );
+  const data = await res.json();
+  console.log(data);
+};
