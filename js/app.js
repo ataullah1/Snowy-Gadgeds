@@ -54,9 +54,20 @@ const phoneFunc = (phone) => {
 </div>`;
     productSec.appendChild(createDiv);
   });
+  loadingDots(true);
 };
 document.getElementById('btnSrc').addEventListener('click', () => {
+  loadingDots(false);
   const inputSearch = document.getElementById('inputSearch');
   const inpValue = inputSearch.value;
   apiConnect(inpValue);
 });
+
+const loadingDots = (isTrue) => {
+  const loading = document.getElementById('loadingDots');
+  if (isTrue) {
+    loading.classList.add('hidden');
+  } else {
+    loading.classList.remove('hidden');
+  }
+};
