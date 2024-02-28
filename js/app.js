@@ -8,6 +8,16 @@ const apiConnect = async (search) => {
   //   console.log(phones);
 };
 const phoneFunc = (phone) => {
+  // Search result show all button
+  const showAll = document.getElementById('showAll');
+  const len = phone.length;
+  if (len > 9) {
+    showAll.classList.remove('hidden');
+  } else {
+    showAll.classList.add('hidden');
+  }
+  // Search result show only 9 phones
+  phone = phone.slice(0, 9);
   const productSec = document.getElementById('productSec');
   //   clear phone container another search
   productSec.innerHTML = '';
