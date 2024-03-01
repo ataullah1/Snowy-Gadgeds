@@ -11,6 +11,12 @@ const dataCall = (dta) => {
   const mainBox = document.getElementById('mainBox');
   dta.forEach((elm) => {
     console.log(elm);
+    let sum = 1;
+    const features = elm.features;
+    for (const feature of features) {
+      let feat = sum++ + '.' + ' ' + feature;
+      //   console.log(feat);
+    }
     const elmBox = document.createElement('div');
     elmBox.classList =
       'max-w-[487px] p-6 bg-white rounded-2xl border border-neutral-900 border-opacity-10 mx-auto';
@@ -25,8 +31,7 @@ const dataCall = (dta) => {
   <div
     class="text-zinc-600 text-base font-normal font-['Work Sans'] leading-relaxed"
   >
-    1. Natural language processing<br />2 .Contextual understanding<br />3.
-    Text generation
+  ${feat}
   </div>
   <div
     class="w-full h-[1px] border border-neutral-600 my-2 border-opacity-20"
