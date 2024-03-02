@@ -10,13 +10,19 @@ const api = async () => {
 const dataCall = (dta) => {
   const mainBox = document.getElementById('mainBox');
   dta.forEach((elm) => {
+    let li = [];
     console.log(elm);
-    let sum = 1;
     const features = elm.features;
+    // console.log(features);
+    let lis = '';
+    let sum = 1;
     for (const feature of features) {
       const feat = sum++ + '.' + ' ' + feature;
-      console.log(feat);
+      // console.log(feat);
+      lis = `<li>${feat}</li>`;
+      li.push(lis);
     }
+
     const elmBox = document.createElement('div');
     elmBox.classList =
       'max-w-[487px] p-6 bg-white rounded-2xl border border-neutral-900 border-opacity-10 mx-auto';
@@ -31,8 +37,7 @@ const dataCall = (dta) => {
   <div
     class="text-zinc-600 text-base font-normal font-['Work Sans'] leading-relaxed"
   >
-    1. Natural language processing<br />2 .Contextual understanding<br />3.
-    Text generation
+   <ul>${li.join('')}</ul>
   </div>
   <div
     class="w-full h-[1px] border border-neutral-600 my-2 border-opacity-20"
@@ -51,7 +56,7 @@ const dataCall = (dta) => {
         <div
           class="text-zinc-600 text-base font-medium font-['Work Sans'] leading-relaxed"
         >
-          11/01/2022
+          ${elm.published_in}
         </div>
       </div>
     </div>
